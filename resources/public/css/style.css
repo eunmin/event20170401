@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #808080;
+}
+#app {
+  max-width: 512px;
+  margin: 0 auto;
+}
+hr {
+  background-image: url(../images/hr.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 60px;
+  width: 100%;
+  border: 0;
+}
+.photo {
+  height: auto;
+  width: 100%;
+  display: block;
+  background-color: #fcf5f8;
+}
+.wrap_cover {
+  position: fixed;
+  max-width: 512px;
+  top: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+.cover_item {
+  max-height: none!important;
+  position: relative;
+}
+.wrap_body {
+  background: #fcf5f8;
+  z-index: 10;
+  overflow: hidden;
+  padding-top: 20px;
+}
+.cover_image {
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 100%;
+  padding: 0!important;
+  user-select: none;
+  margin: 0;
+  display: block;
+}
+.cover_cell {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  top: 13%;
+  -webkit-transform: translate(0,-100%);
+  position: absolute;
+}
+span {
+  font-weight: 100;
+  letter-spacing: -1px;
+  font-family: "Iropke Batang",serif;
+}
+.article {
+  color: #333333;
+  text-align: justify;
+  font-size: 13pt;
+  line-height: 21pt;
+  word-break: break-all;
+}
+.article_m {
+  color: #333333;
+  text-align: justify;
+  font-size: 15pt;
+  line-height: 21pt;
+  word-break: break-all;
+}
+#title {
+  font-size: 18pt;
+  line-height: 24pt;
+  color: #222;
+}
+#subtitle {
+  font-size: 10pt;
+  line-height: 15pt;
+  color: #222;
+}
+#family {
+  padding-top: 20px;
+}
+#invitation {
+  padding: 0 20px 0 20px;
+}
+#info {
+  padding: 0 20px 0 20px;
+}
+#grallery {
+}
+.small {
+  display: inline-block;
+  width: 38px;
+  text-align: center;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 10pt;
+}
+.map {
+  height: auto;
+  width: 100%;
+  padding-top: 20px;
+}
+.calandar {
+  background-image: url(../images/calendar-icon.png);
+  background-size: 18px;
+  background-repeat: no-repeat;
+  background-position: left;
+  padding-left: 24px;
+}
+#footer {
+  height: 200px;
+  background-image: url(../images/cljs.svg);
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.re_frame {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
