@@ -1,5 +1,6 @@
 (ns event20170401.views
     (:require [re-frame.core :as re-frame]
+              [reagent.core :as r]
               [clojure.string :refer [split-lines]]))
 
 (defn header-panel []
@@ -28,8 +29,8 @@
       [:div#invitation
         [:div
           (for [text (split-lines @invitation)]
-            [:div
-              [:span.article text]])]
+            ^{:key text} [:div
+                          [:span.article text]])]
         [:div#family
           [:div
             [:span.article_m (str (:father @groom) " · " (:mother @groom))]
@@ -54,12 +55,25 @@
     (fn []
       [:div#grallery-panel
         (for [url @photos]
-          [:div.grallery [:img.photo {:src (str "images/" url)}]])])))
+          ^{:key url} [:div.grallery [:img.photo {:src (str "images/" url)}]])])))
 
 (defn footer-panel []
-  (fn []
-    [:div#footer
-      [:div.re_frame]]))
+  (r/create-class
+    {:component-did-mount
+     (fn []
+       (.log js/console "AA")
+       (js/Kakao.init "743de0eee134fea91ddd7a9274aab6e0")
+       (js/Kakao.Link.createTalkLinkButton
+         #js {:container "#kakao-link-btn"
+              :label "test"
+              :image {:src "https://20170401.github.io/images/KDI_8425.jpg"}
+              :webButton {:text "gg" :url "https://20170401.github.io"}}))
+     :reagent-render
+     (fn []
+      [:div#footer
+        [:div
+          [:a#kakao-link-btn {:href "javascript;"} "test"]]
+        [:div.re_frame]])}))
 
 (defn main-panel []
   (let [window (re-frame/subscribe [:window])]
